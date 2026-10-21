@@ -28,6 +28,8 @@ The extracted P7 and P8 code under `scientific_source/r5/` records the historica
 
 The retained R3 PCAP adapter, 24-feature extractor, original representation contract and dependency lock are under `scientific_source/r3/`. The lock records the historical environment; it is not the dependency file for the public verifier. The exact R5 feature-materialization body is `scientific_source/r5/REMOTE_MATERIALIZE.py`; its extraction is recorded in `provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json`. These added sources are inspected as evidence and are not executed by the supported command.
 
+The historical `C6_24FEATURE_EXTRACTOR_v1.py` is retained as a SHA-bound source artifact. Its older type declarations and validator are not the active CatBoost input contract and are not called by the inspected R3/R5 PCAP materialization paths. The active model binding in `C6_R3_FEATURE_MODEL_EVAL_v1.py` uses 11 canonical-JSON categorical features and 13 numeric features.
+
 The historical P7 script loaded a preparation record containing labels before main-model prediction. The prediction calls received only feature columns, and qualification labels were used for scoring afterward. This supports feature-input separation, not process-wide label isolation or proof of the complete historical tuning chronology.
 
 ## Provenance and interpretation

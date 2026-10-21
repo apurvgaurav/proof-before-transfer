@@ -13,7 +13,7 @@
   "complete_pipeline_reproduction_claimed": false,
   "integrity": {
     "files_checked": 97,
-    "manifest_sha256": "a5633d10f04245938457ad4c8c294c3008a8d81c7cb3134086de54c99cbda9b8"
+    "manifest_sha256": "0a9508521df6f74cdcb516fd20cccf3b6ba2818309c772ad71970d2e4f2506b8"
   },
   "stored_roles_and_schema": {
     "counts": {
@@ -1422,11 +1422,11 @@
       "passed": true
     },
     {
-      "name": "finite probabilities seed0",
+      "name": "finite probabilities nuisance",
       "passed": true
     },
     {
-      "name": "finite probabilities nuisance",
+      "name": "finite probabilities seed2",
       "passed": true
     },
     {
@@ -1438,7 +1438,7 @@
       "passed": true
     },
     {
-      "name": "finite probabilities seed2",
+      "name": "finite probabilities seed0",
       "passed": true
     },
     {
