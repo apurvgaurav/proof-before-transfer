@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this versioned research-artifact release when using its files."
+type: dataset
+title: "Proof Before Transfer: Leakage-Resistant Qualification for Post-Quantum TLS Intrusion-Detection Studies — Research Artifacts"
+authors:
+  - family-names: Gaurav
+    given-names: Apurv
+    affiliation: "The Pennsylvania State University, USA"
+version: 1.0.0
+date-released: 2026-10-21
+repository-code: "https://github.com/apurvgaurav/proof-before-transfer"
+url: "https://github.com/apurvgaurav/proof-before-transfer"
+abstract: >-
+  Preserved scientific inputs, model artifacts, saved predictions, retrospective
+  baseline diagnostics and numerical verification source for a qualification-only
+  study of a synthetic classical-regime TLS intrusion-detection pipeline. The
+  X25519-to-X25519MLKEM768 transfer experiment was not run. The release records
+  missing evidence and does not claim complete experimental reproduction.

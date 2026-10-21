@@ -1,0 +1,30 @@
+{
+  "algorithm": "SHA-256",
+  "prefixes_are_display_only": true,
+  "artifacts": [
+    {
+      "artifact": "Source kit",
+      "sha256": "fd31a96ec46b3dbb0b836f998e0566dbbf1221257392a79627e79a3f9bd5293d"
+    },
+    {
+      "artifact": "Qualification schedule",
+      "sha256": "8bd86ca286c3e768675a18b772676c5e219221b9f74f8818733f6b354ceac31f"
+    },
+    {
+      "artifact": "Qualification dataset",
+      "sha256": "51c8c6233f3d0d096b281aef3d52b30af270902e2992875824eb345bd0da3ce3"
+    },
+    {
+      "artifact": "Reconciliation archive",
+      "sha256": "9ca63c903fb1c46d5e71e443f11595a6578ff1f4ec098af9469beaf55477af03"
+    },
+    {
+      "artifact": "Frozen feature rows",
+      "sha256": "94bee4412fb4a53a0dfbf556a1900ba22adc98b8da9bb041e4ffc208a5736f60"
+    },
+    {
+      "artifact": "Qualification and adjudication archive",
+      "sha256": "d887ce8d33c56da23d77ee40305c9ed88a6e5268b7253c016dc796656f45d852"
+    }
+  ]
+}
