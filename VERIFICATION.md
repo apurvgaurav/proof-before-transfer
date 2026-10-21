@@ -4,7 +4,7 @@
 
 ```bash
 python -m pip install -r requirements-verification.txt
-python verify.py --report ../verification-v1.0.0.json
+python verify.py --report ../verification-v1.0.1.json
 ```
 
 Python 3.11 or newer is required. The dependency file pins the NumPy version used for this verification adapter. It does not describe the historical training or acquisition environment.
@@ -25,6 +25,10 @@ The report records failures and exits with a nonzero status if a check fails. In
 The supported command performs **no new fits or main frozen-model inference; stored-baseline arithmetic replay only**. It does not call the archived scientific runners, deserialize CatBoost/joblib objects, install software, open a network connection, collect traffic, or run the post-quantum transfer experiment. The installation command above is a separate environment setup step.
 
 The extracted P7 and P8 code under `scientific_source/r5/` records the historical calculation. P7 contains the original main-model inference and nuisance-fitting calls and depends on the missing exact nuisance evaluator. These files are source evidence, not runnable replacements for the supported verifier. Their extraction boundaries and hashes are documented in `provenance/P7_P8_SOURCE_EXTRACTION.json`.
+
+The retained R3 PCAP adapter, 24-feature extractor, original representation contract and dependency lock are under `scientific_source/r3/`. The lock records the historical environment; it is not the dependency file for the public verifier. The exact R5 feature-materialization body is `scientific_source/r5/REMOTE_MATERIALIZE.py`; its extraction is recorded in `provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json`. These added sources are inspected as evidence and are not executed by the supported command.
+
+The historical P7 script loaded a preparation record containing labels before main-model prediction. The prediction calls received only feature columns, and qualification labels were used for scoring afterward. This supports feature-input separation, not process-wide label isolation or proof of the complete historical tuning chronology.
 
 ## Provenance and interpretation
 

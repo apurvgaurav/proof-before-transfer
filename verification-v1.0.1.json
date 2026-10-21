@@ -1,0 +1,3797 @@
+{
+  "schema": "proof-before-transfer-public-verification-v1",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "training_calls": 0,
+  "calibration_fit_calls": 0,
+  "main_model_inference_calls": 0,
+  "acquisitions": 0,
+  "historical_scripts_executed": false,
+  "pickle_deserializations": 0,
+  "complete_pipeline_reproduction_claimed": false,
+  "integrity": {
+    "files_checked": 97,
+    "manifest_sha256": "a5633d10f04245938457ad4c8c294c3008a8d81c7cb3134086de54c99cbda9b8"
+  },
+  "stored_roles_and_schema": {
+    "counts": {
+      "TRAIN": 512,
+      "DEV_STOP": 64,
+      "DEV_CAL": 64,
+      "QUAL": 256
+    },
+    "strata": {
+      "TRAIN": {
+        "F1/0": 128,
+        "F1/1": 128,
+        "F2/0": 128,
+        "F2/1": 128
+      },
+      "DEV_STOP": {
+        "F1/0": 16,
+        "F1/1": 16,
+        "F2/0": 16,
+        "F2/1": 16
+      },
+      "DEV_CAL": {
+        "F1/0": 16,
+        "F1/1": 16,
+        "F2/0": 16,
+        "F2/1": 16
+      },
+      "QUAL": {
+        "F1/0": 64,
+        "F1/1": 64,
+        "F2/0": 64,
+        "F2/1": 64
+      }
+    },
+    "feature_count": 24,
+    "scope": "Stored role and feature schemas; not proof of historical label blindness or complete semantic leakage absence."
+  },
+  "index_derivative": {
+    "derivative_sha256": "149a35d6b12b6d4eb1f5ec24eb8c308fd5c4aadfd9cdc7542170f23ec2bc8bb4",
+    "original_index_sha256_record_only": "5e29c515eaed5e327aa1bca7cfb9487c9f5355fc970c9a15ed577497adda027d",
+    "rows": 256,
+    "original_index_bytes_verified_by_this_public_script": false,
+    "underlying_row_archives_verified": false
+  },
+  "qualification_saved_array_replay": {
+    "direct_brier_losses": {
+      "ensemble": 7.138437351572796e-16,
+      "nuisance": 0.25,
+      "seed0": 5.741668689917284e-17,
+      "seed1": 1.5524676474424774e-16,
+      "seed2": 5.927566674392317e-15,
+      "seed3": 6.893887680088905e-16,
+      "seed4": 5.8423823967039495e-15
+    },
+    "metrics": {
+      "G_POOL": 0.24999999999999928,
+      "G_LB95": 0.24999999999999853,
+      "G_F1": 0.2499999999999999,
+      "G_F2": 0.24999999999999867,
+      "SEED_G": [
+        0.24999999999999994,
+        0.24999999999999983,
+        0.24999999999999406,
+        0.2499999999999993,
+        0.24999999999999417
+      ],
+      "POSITIVE_SEEDS": 5,
+      "MEDIAN_SEED_G": 0.2499999999999993,
+      "G_NUISANCE": 0.0
+    },
+    "bootstrap": {
+      "replicates": 10000,
+      "generator": "PCG64",
+      "seed": 1447780860,
+      "resampling_unit": "complete semantic unit",
+      "strata_order": [
+        "F1/0",
+        "F1/1",
+        "F2/0",
+        "F2/1"
+      ],
+      "lower_quantile": 0.05,
+      "quantile_method": "linear"
+    },
+    "certificate_only_conditions": [
+      "03_zero_cross_partition_overlap",
+      "04_model_freeze"
+    ],
+    "nuisance_design": {
+      "TRAIN": {
+        "rows": 512,
+        "fields": [
+          "collection_block_index",
+          "environment_id",
+          "implementation_id",
+          "request_count",
+          "request_size_bin",
+          "response_volume_bin",
+          "run_order_quartile",
+          "semantic_family",
+          "treatment_arm"
+        ],
+        "joint_vectors": 256,
+        "all_joint_vectors_label_balanced": true
+      },
+      "QUAL": {
+        "rows": 256,
+        "fields": [
+          "collection_block_index",
+          "environment_id",
+          "implementation_id",
+          "request_count",
+          "request_size_bin",
+          "response_volume_bin",
+          "run_order_quartile",
+          "semantic_family",
+          "treatment_arm"
+        ],
+        "joint_vectors": 128,
+        "all_joint_vectors_label_balanced": true
+      }
+    },
+    "nuisance_evaluator_or_fit_replayed": false
+  },
+  "model_and_calibration_records": {
+    "model_files_hashed": 5,
+    "model_objects_loaded": 0,
+    "joblib_files_loaded": 0,
+    "joblib_files_included": false,
+    "calibrator_hashes_status": "Declared historical hash agreement only; original joblib byte streams are intentionally omitted. Exact coefficient/intercept JSON records are included.",
+    "retrospective_DEV_CAL_rows": 320,
+    "maximum_probability_arithmetic_error": 8.271806125530277e-25,
+    "historical_training_time_per_unit_margin_log_recovered": false
+  },
+  "baseline_stored_coefficient_replay": {
+    "stored_model_partition_groups": 48,
+    "pooled_and_family_metric_groups": 144,
+    "prediction_rows": 10752,
+    "maximum_stored_coefficient_probability_error": 1.1102230246251565e-16,
+    "maximum_derived_numeric_difference": 0.0,
+    "estimator_fits": 0,
+    "calibration_fits": 0,
+    "lookup_reconstructions_or_new_models": 0,
+    "interpretation": "Replay of previously fitted post hoc diagnostics using preserved coefficients and lookup tables."
+  },
+  "passed": true,
+  "checks": [
+    {
+      "name": "safe manifest path CITATION.cff",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path CITATION.cff",
+      "passed": true
+    },
+    {
+      "name": "checksum CITATION.cff",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path LICENSE_STATUS.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path LICENSE_STATUS.md",
+      "passed": true
+    },
+    {
+      "name": "checksum LICENSE_STATUS.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path MISSING_EVIDENCE.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path MISSING_EVIDENCE.md",
+      "passed": true
+    },
+    {
+      "name": "checksum MISSING_EVIDENCE.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "name": "checksum PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path README.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path README.md",
+      "passed": true
+    },
+    {
+      "name": "checksum README.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path VERIFICATION.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path VERIFICATION.md",
+      "passed": true
+    },
+    {
+      "name": "checksum VERIFICATION.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path config/feature_schema.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path config/feature_schema.json",
+      "passed": true
+    },
+    {
+      "name": "checksum config/feature_schema.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r3/C6_R3_TRAIN_DEV_PRIMARY_640.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r3/C6_R3_TRAIN_DEV_PRIMARY_640.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r3/C6_R3_TRAIN_DEV_PRIMARY_640.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r3/R3_TRAIN_DEV_640_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r3/R3_TRAIN_DEV_640_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r3/R3_TRAIN_DEV_640_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/R5_DATASET.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/R5_DATASET.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/R5_DATASET.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/R5_ELIG_256_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/R5_ELIG_256_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/R5_ELIG_256_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/R5_SCHEDULE.tsv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/R5_SCHEDULE.tsv",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/R5_SCHEDULE.tsv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/indexes/R5_ARCHIVE_AUXILIARY_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/indexes/R5_ARCHIVE_AUXILIARY_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/indexes/R5_ARCHIVE_AUXILIARY_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/indexes/R5_RECONCILIATION_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/indexes/R5_RECONCILIATION_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/indexes/R5_RECONCILIATION_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/indexes/R5_ROW_PCAP_LABEL_BLIND_INDEX_PUBLIC.tsv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/indexes/R5_ROW_PCAP_LABEL_BLIND_INDEX_PUBLIC.tsv",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/indexes/R5_ROW_PCAP_LABEL_BLIND_INDEX_PUBLIC.tsv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/analysis_code_lock.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/analysis_code_lock.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/analysis_code_lock.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/manuscript_summary.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/manuscript_summary.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/manuscript_summary.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/manuscript_table.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/manuscript_table.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/manuscript_table.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/protocol_public.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/protocol_public.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/protocol_public.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/derived_numeric_features.csv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/derived_numeric_features.csv",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/derived_numeric_features.csv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/models.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/models.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/models.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/per_unit_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/per_unit_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/per_unit_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/prediction_lock.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/prediction_lock.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/prediction_lock.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/predictions_before_qualification_label_load.npz",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/predictions_before_qualification_label_load.npz",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/predictions_before_qualification_label_load.npz",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/verification.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/verification.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/run_posthoc_baselines.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/run_posthoc_baselines.py",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/run_posthoc_baselines.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.eps",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.eps",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.eps",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.pdf",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.pdf",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.pdf",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.png",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.png",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.png",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.py",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.svg",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.svg",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.svg",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision_caption.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision_caption.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision_caption.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/audit_saved_feature_patterns.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/audit_saved_feature_patterns.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/audit_saved_feature_patterns.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/audit_saved_predictions.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/audit_saved_predictions.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/audit_saved_predictions.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/audit_stored_model_importance.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/audit_stored_model_importance.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/audit_stored_model_importance.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/dev_cal_retrospective_margins.csv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/dev_cal_retrospective_margins.csv",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/dev_cal_retrospective_margins.csv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/dev_cal_retrospective_report.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/dev_cal_retrospective_report.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/dev_cal_retrospective_report.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/independent_numerical_audit.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/independent_numerical_audit.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/independent_numerical_audit.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/independent_source_identity_audit.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/independent_source_identity_audit.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/independent_source_identity_audit.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/reconstruct_dev_cal_margins.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/reconstruct_dev_cal_margins.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/reconstruct_dev_cal_margins.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/saved_feature_pattern_findings.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/saved_feature_pattern_findings.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/saved_feature_pattern_findings.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/saved_prediction_findings.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/saved_prediction_findings.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/saved_prediction_findings.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/stored_model_importance_findings.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/stored_model_importance_findings.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/stored_model_importance_findings.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/verify_retained_reconciliation_indexes.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/verify_retained_reconciliation_indexes.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/verify_retained_reconciliation_indexes.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/04_P4_TRAINING_SUMMARY.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/04_P4_TRAINING_SUMMARY.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/04_P4_TRAINING_SUMMARY.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1246993817-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1246993817-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1246993817-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1246993817.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1246993817.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1246993817.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1442176679-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1442176679-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1442176679-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1442176679.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1442176679.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1442176679.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-228470304-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-228470304-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-228470304-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-228470304.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-228470304.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-228470304.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-591510293-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-591510293-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-591510293-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-591510293.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-591510293.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-591510293.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-692193369-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-692193369-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-692193369-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-692193369.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-692193369.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-692193369.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/BASELINE_PROTOCOL_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/BASELINE_PROTOCOL_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/BASELINE_PROTOCOL_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/ORIGINAL_ARTIFACT_AVAILABILITY.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/ORIGINAL_ARTIFACT_AVAILABILITY.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/ORIGINAL_ARTIFACT_AVAILABILITY.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/P7_P8_SOURCE_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/P7_P8_SOURCE_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/P7_P8_SOURCE_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/R5_INDEX_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/R5_INDEX_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/R5_INDEX_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/original_artifact_hashes.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/original_artifact_hashes.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/original_artifact_hashes.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/runtime_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/runtime_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/runtime_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/runtime_records/03_IMPLEMENTATION_ID_AUTHORITY.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/runtime_records/03_IMPLEMENTATION_ID_AUTHORITY.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/runtime_records/03_IMPLEMENTATION_ID_AUTHORITY.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/runtime_records/R4_CLIENT_LIVE.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/runtime_records/R4_CLIENT_LIVE.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/runtime_records/R4_CLIENT_LIVE.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path requirements-verification.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path requirements-verification.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum requirements-verification.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/05_P7_PREP.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/05_P7_PREP.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/05_P7_PREP.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/05_PREEXEC_CERT.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/05_PREEXEC_CERT.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/05_PREEXEC_CERT.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_MODEL_HASHES.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_MODEL_HASHES.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_MODEL_HASHES.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_RESULT.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_RESULT.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_RESULT.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_SCIENTIFIC_ARRAYS.npz",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_SCIENTIFIC_ARRAYS.npz",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_SCIENTIFIC_ARRAYS.npz",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_SEEDS.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_SEEDS.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_SEEDS.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P8_INDEPENDENT_ADJUDICATION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P8_INDEPENDENT_ADJUDICATION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P8_INDEPENDENT_ADJUDICATION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/cmd/c6-r4-client/main.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/cmd/c6-r4-client/main.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/cmd/c6-r4-client/main.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/cmd/c6-r4-server/main.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/cmd/c6-r4-server/main.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/cmd/c6-r4-server/main.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/cmd/c6-r4-serverctl/main.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/cmd/c6-r4-serverctl/main.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/cmd/c6-r4-serverctl/main.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/go.mod",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/go.mod",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/go.mod",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/internal/c6r4/runtime.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/internal/c6r4/runtime.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/internal/c6r4/runtime.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/internal/c6r4/runtime_test.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/internal/c6r4/runtime_test.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/internal/c6r4/runtime_test.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/02_HISTORICAL_REPRESENTATION_CONTRACT.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/02_HISTORICAL_REPRESENTATION_CONTRACT.json",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/02_HISTORICAL_REPRESENTATION_CONTRACT.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_24FEATURE_EXTRACTOR_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_24FEATURE_EXTRACTOR_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_24FEATURE_EXTRACTOR_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_FEATURE_MODEL_EVAL_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_FEATURE_MODEL_EVAL_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_FEATURE_MODEL_EVAL_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_P3_P4_P5_SCIENTIFIC_RUNNER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_P3_P4_P5_SCIENTIFIC_RUNNER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_P3_P4_P5_SCIENTIFIC_RUNNER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_REAL_PCAP_24FEATURE_ADAPTER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_REAL_PCAP_24FEATURE_ADAPTER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_REAL_PCAP_24FEATURE_ADAPTER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_REQUIREMENTS_LOCK.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_REQUIREMENTS_LOCK.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_REQUIREMENTS_LOCK.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_RAW24_VALUE_MATERIALIZER_STATIC_QUALIFICATION_v4.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_RAW24_VALUE_MATERIALIZER_STATIC_QUALIFICATION_v4.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_RAW24_VALUE_MATERIALIZER_STATIC_QUALIFICATION_v4.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/c6_r3_common.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/c6_r3_common.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/c6_r3_common.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r4/C6_R4_NUISANCE_MATERIALIZER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r4/C6_R4_NUISANCE_MATERIALIZER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r4/C6_R4_NUISANCE_MATERIALIZER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r4/C6_R4_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r4/C6_R4_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r4/C6_R4_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r4/c6_r4_common.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r4/c6_r4_common.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r4/c6_r4_common.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r5/P7_SCIENTIFIC_EXECUTOR.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r5/P7_SCIENTIFIC_EXECUTOR.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r5/P7_SCIENTIFIC_EXECUTOR.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r5/P8_INDEPENDENT_ADJUDICATOR.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r5/P8_INDEPENDENT_ADJUDICATOR.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r5/P8_INDEPENDENT_ADJUDICATOR.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r5/REMOTE_MATERIALIZE.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r5/REMOTE_MATERIALIZE.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r5/REMOTE_MATERIALIZE.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path verify.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path verify.py",
+      "passed": true
+    },
+    {
+      "name": "checksum verify.py",
+      "passed": true
+    },
+    {
+      "name": "manifest covers every released file",
+      "passed": true
+    },
+    {
+      "name": "schema source hash",
+      "passed": true
+    },
+    {
+      "name": "24 ordered features match frozen source",
+      "passed": true
+    },
+    {
+      "name": "11 categorical and 13 scalar features",
+      "passed": true
+    },
+    {
+      "name": "five seed values match frozen source",
+      "passed": true
+    },
+    {
+      "name": "R3 features and semantics bijection",
+      "passed": true
+    },
+    {
+      "name": "R5 semantic slots unique",
+      "passed": true
+    },
+    {
+      "name": "R3 feature ordinals complete",
+      "passed": true
+    },
+    {
+      "name": "R5 feature and schedule ordinals complete",
+      "passed": true
+    },
+    {
+      "name": "all 896 feature dictionaries pass frozen schema",
+      "passed": true
+    },
+    {
+      "name": "partition sizes",
+      "passed": true
+    },
+    {
+      "name": "896 unique logical slots",
+      "passed": true
+    },
+    {
+      "name": "896 unique unit IDs",
+      "passed": true
+    },
+    {
+      "name": "TRAIN family/label balance",
+      "passed": true
+    },
+    {
+      "name": "DEV_STOP family/label balance",
+      "passed": true
+    },
+    {
+      "name": "DEV_CAL family/label balance",
+      "passed": true
+    },
+    {
+      "name": "QUAL family/label balance",
+      "passed": true
+    },
+    {
+      "name": "public derivative index hash",
+      "passed": true
+    },
+    {
+      "name": "unchanged nonlocator projection commitment",
+      "passed": true
+    },
+    {
+      "name": "256 public and reconciliation index rows",
+      "passed": true
+    },
+    {
+      "name": "256 public-index scientific bindings",
+      "passed": true
+    },
+    {
+      "name": "qualification array schema",
+      "passed": true
+    },
+    {
+      "name": "qualification labels agree with frozen schedule",
+      "passed": true
+    },
+    {
+      "name": "finite probabilities seed4",
+      "passed": true
+    },
+    {
+      "name": "finite probabilities seed0",
+      "passed": true
+    },
+    {
+      "name": "finite probabilities nuisance",
+      "passed": true
+    },
+    {
+      "name": "finite probabilities seed1",
+      "passed": true
+    },
+    {
+      "name": "finite probabilities ensemble",
+      "passed": true
+    },
+    {
+      "name": "finite probabilities seed2",
+      "passed": true
+    },
+    {
+      "name": "finite probabilities seed3",
+      "passed": true
+    },
+    {
+      "name": "ensemble is arithmetic mean of five seeds",
+      "passed": true
+    },
+    {
+      "name": "64 semantic units per bootstrap stratum",
+      "passed": true
+    },
+    {
+      "name": "recorded bootstrap seed",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric G_POOL",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric G_LB95",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric G_F1",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric G_F2",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric SEED_G",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric POSITIVE_SEEDS",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric MEDIAN_SEED_G",
+      "passed": true
+    },
+    {
+      "name": "P7/P8 saved metric G_NUISANCE",
+      "passed": true
+    },
+    {
+      "name": "recorded eleven-condition adjudication agreement",
+      "passed": true
+    },
+    {
+      "name": "preparation labels/families agree with arrays",
+      "passed": true
+    },
+    {
+      "name": "TRAIN nine nuisance fields and paired labels",
+      "passed": true
+    },
+    {
+      "name": "QUAL nine nuisance fields and paired labels",
+      "passed": true
+    },
+    {
+      "name": "bootstrap replicate byte commitment",
+      "passed": true
+    },
+    {
+      "name": "five models declared",
+      "passed": true
+    },
+    {
+      "name": "stored model hash 228470304",
+      "passed": true
+    },
+    {
+      "name": "declared calibrator hash agreement 228470304",
+      "passed": true
+    },
+    {
+      "name": "stored Platt coefficients schema 228470304",
+      "passed": true
+    },
+    {
+      "name": "stored model hash 1442176679",
+      "passed": true
+    },
+    {
+      "name": "declared calibrator hash agreement 1442176679",
+      "passed": true
+    },
+    {
+      "name": "stored Platt coefficients schema 1442176679",
+      "passed": true
+    },
+    {
+      "name": "stored model hash 591510293",
+      "passed": true
+    },
+    {
+      "name": "declared calibrator hash agreement 591510293",
+      "passed": true
+    },
+    {
+      "name": "stored Platt coefficients schema 591510293",
+      "passed": true
+    },
+    {
+      "name": "stored model hash 692193369",
+      "passed": true
+    },
+    {
+      "name": "declared calibrator hash agreement 692193369",
+      "passed": true
+    },
+    {
+      "name": "stored Platt coefficients schema 692193369",
+      "passed": true
+    },
+    {
+      "name": "stored model hash 1246993817",
+      "passed": true
+    },
+    {
+      "name": "declared calibrator hash agreement 1246993817",
+      "passed": true
+    },
+    {
+      "name": "stored Platt coefficients schema 1246993817",
+      "passed": true
+    },
+    {
+      "name": "320 retrospective DEV-CAL rows",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient DEV-CAL sigmoid arithmetic",
+      "passed": true
+    },
+    {
+      "name": "public protocol derivative hash",
+      "passed": true
+    },
+    {
+      "name": "recorded original protocol digest",
+      "passed": true
+    },
+    {
+      "name": "scientific protocol projection preserved",
+      "passed": true
+    },
+    {
+      "name": "archived baseline source bound by prediction lock",
+      "passed": true
+    },
+    {
+      "name": "prediction lock digest",
+      "passed": true
+    },
+    {
+      "name": "post hoc split specification",
+      "passed": true
+    },
+    {
+      "name": "12 stored diagnostic models and 48 arrays",
+      "passed": true
+    },
+    {
+      "name": "896 saved derived-feature rows",
+      "passed": true
+    },
+    {
+      "name": "derived numeric definitions agree",
+      "passed": true
+    },
+    {
+      "name": "stored lookup tokens and class counts match TRAIN",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__decision_stump/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "TRAIN scaler statistics packet_count__logistic_regression",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds packet_count__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay packet_count__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay packet_count__logistic_regression/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__decision_stump/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "TRAIN scaler statistics payload_bytes__logistic_regression",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds payload_bytes__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay payload_bytes__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay payload_bytes__logistic_regression/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__decision_stump/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "TRAIN scaler statistics record_size__logistic_regression",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_size__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_size__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_size__logistic_regression/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__decision_stump/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "TRAIN scaler statistics timing__logistic_regression",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds timing__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay timing__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay timing__logistic_regression/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__decision_stump/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__decision_stump/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__decision_stump/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__decision_stump/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__decision_stump/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "TRAIN scaler statistics joint__logistic_regression",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__logistic_regression/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__logistic_regression/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__logistic_regression/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds joint__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay joint__logistic_regression/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay joint__logistic_regression/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds train_prior/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay train_prior/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds train_prior/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay train_prior/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds train_prior/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay train_prior/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds train_prior/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay train_prior/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay train_prior/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_token_lookup/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_token_lookup/TRAIN",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/TRAIN/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/TRAIN/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/TRAIN/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_token_lookup/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_token_lookup/DEV_STOP",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/DEV_STOP/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/DEV_STOP/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/DEV_STOP/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_token_lookup/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_token_lookup/DEV_CAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/DEV_CAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/DEV_CAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/DEV_CAL/F2",
+      "passed": true
+    },
+    {
+      "name": "baseline probability bounds record_token_lookup/QUAL",
+      "passed": true
+    },
+    {
+      "name": "stored-coefficient replay record_token_lookup/QUAL",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/QUAL/None",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/QUAL/F1",
+      "passed": true
+    },
+    {
+      "name": "saved metric replay record_token_lookup/QUAL/F2",
+      "passed": true
+    },
+    {
+      "name": "10752 per-unit probability records",
+      "passed": true
+    },
+    {
+      "name": "all per-unit CSV probabilities bind to frozen data and locked arrays",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path CITATION.cff",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path CITATION.cff",
+      "passed": true
+    },
+    {
+      "name": "checksum CITATION.cff",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path LICENSE_STATUS.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path LICENSE_STATUS.md",
+      "passed": true
+    },
+    {
+      "name": "checksum LICENSE_STATUS.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path MISSING_EVIDENCE.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path MISSING_EVIDENCE.md",
+      "passed": true
+    },
+    {
+      "name": "checksum MISSING_EVIDENCE.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "name": "checksum PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path README.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path README.md",
+      "passed": true
+    },
+    {
+      "name": "checksum README.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path VERIFICATION.md",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path VERIFICATION.md",
+      "passed": true
+    },
+    {
+      "name": "checksum VERIFICATION.md",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path config/feature_schema.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path config/feature_schema.json",
+      "passed": true
+    },
+    {
+      "name": "checksum config/feature_schema.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r3/C6_R3_TRAIN_DEV_PRIMARY_640.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r3/C6_R3_TRAIN_DEV_PRIMARY_640.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r3/C6_R3_TRAIN_DEV_PRIMARY_640.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r3/R3_TRAIN_DEV_640_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r3/R3_TRAIN_DEV_640_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r3/R3_TRAIN_DEV_640_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/R5_DATASET.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/R5_DATASET.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/R5_DATASET.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/R5_ELIG_256_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/R5_ELIG_256_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/R5_ELIG_256_FEATURE_ROWS_LABEL_BLIND.jsonl",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/R5_SCHEDULE.tsv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/R5_SCHEDULE.tsv",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/R5_SCHEDULE.tsv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/indexes/R5_ARCHIVE_AUXILIARY_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/indexes/R5_ARCHIVE_AUXILIARY_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/indexes/R5_ARCHIVE_AUXILIARY_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/indexes/R5_RECONCILIATION_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/indexes/R5_RECONCILIATION_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/indexes/R5_RECONCILIATION_INDEX_AUTHORITY",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path data/r5/indexes/R5_ROW_PCAP_LABEL_BLIND_INDEX_PUBLIC.tsv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path data/r5/indexes/R5_ROW_PCAP_LABEL_BLIND_INDEX_PUBLIC.tsv",
+      "passed": true
+    },
+    {
+      "name": "checksum data/r5/indexes/R5_ROW_PCAP_LABEL_BLIND_INDEX_PUBLIC.tsv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/analysis_code_lock.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/analysis_code_lock.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/analysis_code_lock.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/manuscript_summary.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/manuscript_summary.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/manuscript_summary.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/manuscript_table.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/manuscript_table.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/manuscript_table.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/protocol_public.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/protocol_public.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/protocol_public.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/derived_numeric_features.csv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/derived_numeric_features.csv",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/derived_numeric_features.csv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/models.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/models.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/models.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/per_unit_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/per_unit_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/per_unit_predictions.csv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/prediction_lock.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/prediction_lock.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/prediction_lock.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/predictions_before_qualification_label_load.npz",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/predictions_before_qualification_label_load.npz",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/predictions_before_qualification_label_load.npz",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/results/verification.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/results/verification.json",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/results/verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path diagnostics/baselines/run_posthoc_baselines.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path diagnostics/baselines/run_posthoc_baselines.py",
+      "passed": true
+    },
+    {
+      "name": "checksum diagnostics/baselines/run_posthoc_baselines.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.eps",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.eps",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.eps",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.pdf",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.pdf",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.pdf",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.png",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.png",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.png",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.py",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision.svg",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision.svg",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision.svg",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path figures/fig1_qualification_revision_caption.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path figures/fig1_qualification_revision_caption.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum figures/fig1_qualification_revision_caption.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/audit_saved_feature_patterns.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/audit_saved_feature_patterns.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/audit_saved_feature_patterns.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/audit_saved_predictions.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/audit_saved_predictions.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/audit_saved_predictions.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/audit_stored_model_importance.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/audit_stored_model_importance.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/audit_stored_model_importance.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/dev_cal_retrospective_margins.csv",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/dev_cal_retrospective_margins.csv",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/dev_cal_retrospective_margins.csv",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/dev_cal_retrospective_report.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/dev_cal_retrospective_report.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/dev_cal_retrospective_report.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/independent_numerical_audit.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/independent_numerical_audit.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/independent_numerical_audit.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/independent_source_identity_audit.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/independent_source_identity_audit.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/independent_source_identity_audit.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/reconstruct_dev_cal_margins.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/reconstruct_dev_cal_margins.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/reconstruct_dev_cal_margins.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/saved_feature_pattern_findings.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/saved_feature_pattern_findings.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/saved_feature_pattern_findings.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/saved_prediction_findings.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/saved_prediction_findings.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/saved_prediction_findings.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/stored_model_importance_findings.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/stored_model_importance_findings.json",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/stored_model_importance_findings.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path historical_audits/verify_retained_reconciliation_indexes.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path historical_audits/verify_retained_reconciliation_indexes.py",
+      "passed": true
+    },
+    {
+      "name": "checksum historical_audits/verify_retained_reconciliation_indexes.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/04_P4_TRAINING_SUMMARY.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/04_P4_TRAINING_SUMMARY.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/04_P4_TRAINING_SUMMARY.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1246993817-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1246993817-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1246993817-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1246993817.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1246993817.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1246993817.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1442176679-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1442176679-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1442176679-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-1442176679.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-1442176679.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-1442176679.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-228470304-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-228470304-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-228470304-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-228470304.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-228470304.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-228470304.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-591510293-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-591510293-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-591510293-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-591510293.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-591510293.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-591510293.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-692193369-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-692193369-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-692193369-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path models/r3/seed-692193369.cbm",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path models/r3/seed-692193369.cbm",
+      "passed": true
+    },
+    {
+      "name": "checksum models/r3/seed-692193369.cbm",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/BASELINE_PROTOCOL_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/BASELINE_PROTOCOL_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/BASELINE_PROTOCOL_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/ORIGINAL_ARTIFACT_AVAILABILITY.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/ORIGINAL_ARTIFACT_AVAILABILITY.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/ORIGINAL_ARTIFACT_AVAILABILITY.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/P7_P8_SOURCE_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/P7_P8_SOURCE_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/P7_P8_SOURCE_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/R5_FEATURE_MATERIALIZER_EXTRACTION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/R5_INDEX_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/R5_INDEX_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/R5_INDEX_DERIVATION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/original_artifact_hashes.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/original_artifact_hashes.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/original_artifact_hashes.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/runtime_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/runtime_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/runtime_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/runtime_records/03_IMPLEMENTATION_ID_AUTHORITY.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/runtime_records/03_IMPLEMENTATION_ID_AUTHORITY.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/runtime_records/03_IMPLEMENTATION_ID_AUTHORITY.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path provenance/runtime_records/R4_CLIENT_LIVE.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path provenance/runtime_records/R4_CLIENT_LIVE.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum provenance/runtime_records/R4_CLIENT_LIVE.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path requirements-verification.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path requirements-verification.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum requirements-verification.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/05_P7_PREP.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/05_P7_PREP.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/05_P7_PREP.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/05_PREEXEC_CERT.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/05_PREEXEC_CERT.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/05_PREEXEC_CERT.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_MODEL_HASHES.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_MODEL_HASHES.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_MODEL_HASHES.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_RESULT.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_RESULT.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_RESULT.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_SCIENTIFIC_ARRAYS.npz",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_SCIENTIFIC_ARRAYS.npz",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_SCIENTIFIC_ARRAYS.npz",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P7_SEEDS.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P7_SEEDS.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P7_SEEDS.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path results/qualification/P8_INDEPENDENT_ADJUDICATION.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path results/qualification/P8_INDEPENDENT_ADJUDICATION.json",
+      "passed": true
+    },
+    {
+      "name": "checksum results/qualification/P8_INDEPENDENT_ADJUDICATION.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/cmd/c6-r4-client/main.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/cmd/c6-r4-client/main.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/cmd/c6-r4-client/main.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/cmd/c6-r4-server/main.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/cmd/c6-r4-server/main.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/cmd/c6-r4-server/main.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/cmd/c6-r4-serverctl/main.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/cmd/c6-r4-serverctl/main.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/cmd/c6-r4-serverctl/main.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/go.mod",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/go.mod",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/go.mod",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/internal/c6r4/runtime.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/internal/c6r4/runtime.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/internal/c6r4/runtime.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/go/internal/c6r4/runtime_test.go",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/go/internal/c6r4/runtime_test.go",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/go/internal/c6r4/runtime_test.go",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/02_HISTORICAL_REPRESENTATION_CONTRACT.json",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/02_HISTORICAL_REPRESENTATION_CONTRACT.json",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/02_HISTORICAL_REPRESENTATION_CONTRACT.json",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_24FEATURE_EXTRACTOR_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_24FEATURE_EXTRACTOR_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_24FEATURE_EXTRACTOR_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_FEATURE_MODEL_EVAL_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_FEATURE_MODEL_EVAL_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_FEATURE_MODEL_EVAL_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_P3_P4_P5_SCIENTIFIC_RUNNER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_P3_P4_P5_SCIENTIFIC_RUNNER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_P3_P4_P5_SCIENTIFIC_RUNNER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_REAL_PCAP_24FEATURE_ADAPTER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_REAL_PCAP_24FEATURE_ADAPTER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_REAL_PCAP_24FEATURE_ADAPTER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_REQUIREMENTS_LOCK.txt",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_REQUIREMENTS_LOCK.txt",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_REQUIREMENTS_LOCK.txt",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_R3_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_R3_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_R3_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/C6_RAW24_VALUE_MATERIALIZER_STATIC_QUALIFICATION_v4.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/C6_RAW24_VALUE_MATERIALIZER_STATIC_QUALIFICATION_v4.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/C6_RAW24_VALUE_MATERIALIZER_STATIC_QUALIFICATION_v4.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r3/c6_r3_common.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r3/c6_r3_common.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r3/c6_r3_common.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r4/C6_R4_NUISANCE_MATERIALIZER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r4/C6_R4_NUISANCE_MATERIALIZER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r4/C6_R4_NUISANCE_MATERIALIZER_V1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r4/C6_R4_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r4/C6_R4_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r4/C6_R4_SEMANTIC_AND_PARTITION_v1.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r4/c6_r4_common.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r4/c6_r4_common.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r4/c6_r4_common.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r5/P7_SCIENTIFIC_EXECUTOR.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r5/P7_SCIENTIFIC_EXECUTOR.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r5/P7_SCIENTIFIC_EXECUTOR.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r5/P8_INDEPENDENT_ADJUDICATOR.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r5/P8_INDEPENDENT_ADJUDICATOR.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r5/P8_INDEPENDENT_ADJUDICATOR.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path scientific_source/r5/REMOTE_MATERIALIZE.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path scientific_source/r5/REMOTE_MATERIALIZE.py",
+      "passed": true
+    },
+    {
+      "name": "checksum scientific_source/r5/REMOTE_MATERIALIZE.py",
+      "passed": true
+    },
+    {
+      "name": "safe manifest path verify.py",
+      "passed": true
+    },
+    {
+      "name": "unique manifest path verify.py",
+      "passed": true
+    },
+    {
+      "name": "checksum verify.py",
+      "passed": true
+    },
+    {
+      "name": "manifest covers every released file",
+      "passed": true
+    },
+    {
+      "name": "release bytes unchanged during verification",
+      "passed": true
+    }
+  ],
+  "check_counts": {
+    "total": 905,
+    "passed": 905,
+    "failed": 0
+  },
+  "limits": [
+    "Saved-array arithmetic does not establish that the task was difficult or free of shortcuts.",
+    "Historical acquisition, source-to-binary binding, label-access chronology and absent capture bytes are not reconstructed.",
+    "Two historical gate conditions are checked only against saved certificate markers.",
+    "The exact frozen nuisance evaluator and fitted nuisance artifact are missing; stored nuisance probabilities and metadata balance are checked without a nuisance fit.",
+    "No post-quantum transfer effect is measured."
+  ]
+}

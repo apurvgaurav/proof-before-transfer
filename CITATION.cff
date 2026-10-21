@@ -6,7 +6,7 @@ authors:
   - family-names: Gaurav
     given-names: Apurv
     affiliation: "The Pennsylvania State University, USA"
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-10-21
 repository-code: "https://github.com/apurvgaurav/proof-before-transfer"
 url: "https://github.com/apurvgaurav/proof-before-transfer"
